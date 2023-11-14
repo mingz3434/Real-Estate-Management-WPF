@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Modern_Real_Estate.Model;
 
 namespace Modern_Real_Estate
 {
@@ -21,8 +22,14 @@ namespace Modern_Real_Estate
     {
         public MainWindow()
         {
+            List<Estate> HomeList = new List<Estate>(); SM.HomeList = HomeList;
             InitializeComponent();
             DataContext = new MainViewModel();
         }
-    }
+
+      private void Apartment_Checked(object sender, RoutedEventArgs e)
+      {
+         Content.Content = new ApartmentView();
+      }
+   }
 }

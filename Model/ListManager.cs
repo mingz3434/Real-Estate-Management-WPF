@@ -58,10 +58,13 @@ namespace Modern_Real_Estate.Model
         // Responsibility delete item at index
         public void DeleteAt(int index)
         {
+
            
             if (CheckIndex(index))
-            {    
-                _myList.RemoveAtIndex(index);               
+            {         
+                _myList.RemoveAtIndex(index);
+
+               
             }
         }
 

@@ -26,16 +26,12 @@
                 <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
 
-            <DataGrid 
+            <DataGrid x:Name="dataGrid1" 
                 ItemsSource="{Binding estateManager.MyList}"
                 SelectedItem="{Binding SelectedEstate}"
-                SelectedIndex="{Binding SelectedIndex}"
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False"
                 AutoGenerateColumns="False">
-                <DataGrid.ItemBindingGroup>
-                    <BindingGroup/>
-                </DataGrid.ItemBindingGroup>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="2*"/>
                     <DataGridTextColumn Header="Street name" Binding="{Binding StreetName}" Width="4*"/>
@@ -61,8 +57,8 @@
                 <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValueCity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Country" />
                 <ComboBox ItemsSource="{Binding Countries}"
-                          SelectedItem="{Binding SelectedCountry}"
-                          Text="{Binding TextBoxValueCountry, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                          SelectedItem="{Binding selectedCountry}"
+                          Text="{Binding TextBoxValueCountry, Mode=TwoWay}" />
                 <Label Content="Rooms" />
                 <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValueRooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Square metre" />
@@ -72,7 +68,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="Delete"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding DeleteCommand}" />
                     <Button Content="Save"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding SaveCommand}" />
-                    <Button Content="Add"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding AddCommand}" />
+                    <Button Content="Add"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding AddCommand}" Click="Button_Click" />
                     <Button Content="Clear"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding ClearCommand}" />
 
                 </StackPanel>

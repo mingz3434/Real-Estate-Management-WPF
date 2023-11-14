@@ -28,11 +28,11 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_New" Command="{Binding MenuItem_New}"/>
-                    <MenuItem Header="_Open" Command="{Binding MenuItem_Open}"/>
-                    <MenuItem Header="_Save" Command="{Binding MenuItem_Save}"/>
+                    <MenuItem Header="_New"/>
+                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Save"/>
                     <Separator  />
-                    <MenuItem Header="_Exit" Command="{Binding MenuItem_Exit}"/>
+                    <MenuItem Header="_Exit"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
@@ -40,52 +40,43 @@
             <RadioButton Name="Home"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding HomeViewCommand}"
                          Style="{StaticResource ButtonStyle}"
                          IsChecked="True"/>
             <RadioButton Name="Apartment"   
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding ApartmentViewCommand}"
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="Apartment_Checked"/>
             <RadioButton Name="Villa"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding VillaViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
             <RadioButton Name="Townhouse"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding TownhouseViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
             <RadioButton Name="Hospital"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding HospitalViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
             <RadioButton Name="School"   
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding SchoolViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
             <RadioButton Name="University"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding UniversityViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
             <RadioButton Name="Warehouse"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding WarehouseViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
             <RadioButton Name="Shop"   
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Command="{Binding ShopViewCommand}"
                          Style="{StaticResource ButtonStyle}"/>
         </StackPanel>
 
-        <ContentControl Grid.Column="2" Grid.ColumnSpan="1" Grid.RowSpan="3" Content="{Binding CurrentView}"/>
+        <ContentControl Name="Content" Grid.Column="2" Grid.ColumnSpan="1" Grid.RowSpan="3" Content="{Binding CurrentView}"/>
         <!--<TextBox Grid.Column="2" Grid.Row="3" Text="{Binding MyList}" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True"/>-->
 
     </Grid>

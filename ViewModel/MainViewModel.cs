@@ -22,47 +22,26 @@ namespace Modern_Real_Estate.ViewModel
     {
         //private string fileName = Environment.CurrentDirectory + "\\estateList.dat";
         //private string filePath = Environment.CurrentDirectory + @"\estateList.xml";
-        //public string fileContent { get; set; }
-        public ObservableList<Estate> MyList { get; set; }
+        //public string fileContent;
+        public ObservableList<Estate> MyList;
 
-        //public FileHandler fileHandler { get; set; }
-
-       public EstateManager estateManager { get; set; }
-
-
-        public RelayCommand HomeViewCommand { get; set; }
-        public RelayCommand ApartmentViewCommand { get; set; }
-        public RelayCommand ShopViewCommand { get; set; }
-        public RelayCommand HospitalViewCommand { get; set; }
-        public RelayCommand SchoolViewCommand { get; set; }
-        public RelayCommand TownhouseViewCommand { get; set; }
-        public RelayCommand UniversityViewCommand { get; set; }
-        public RelayCommand VillaViewCommand { get; set; }
-        public RelayCommand WarehouseViewCommand { get; set; }
-
-        //public RelayCommand MenuItem_New => new RelayCommand(execute => NewFile());
-        public RelayCommand MenuItem_Open => new RelayCommand(execute => OpenFile());
-        public RelayCommand MenuItem_Save => new RelayCommand(execute => SaveFile());
-        public RelayCommand MenuItem_Exit => new RelayCommand(execute => ExitMenu());
-
-        public RelayCommand AddCommand => new RelayCommand(execute => AddEstate());
-        //public RelayCommand DeleteCommand => new RelayCommand(execute => DeleteEstate());
-        //public RelayCommand SaveCommand => new RelayCommand(execute => SaveEstate());
-        //public RelayCommand ClearCommand => new RelayCommand(execute => ClearEstate());
+        //public FileHandler fileHandler;
 
 
 
 
 
-        public HomeViewModel Home { get; set; }
-        public ApartmentViewModel ApartmentView { get; set; }
-        public ShopViewModel ShopView { get; set; }
-        public HospitalViewModel HospitalView { get; set; }
-        public SchoolViewModel SchoolView { get; set; }
-        public TownhouseViewModel TownhouseView { get; set; }
-        public UniversityViewModel UniversityView { get; set; }
-        public VillaViewModel VillaView { get; set; }
-        public WarehouseViewModel WarehouseView { get; set; }
+
+
+        public HomeViewModel Home;
+        public ApartmentViewModel ApartmentView;
+        public ShopViewModel ShopView;
+        public HospitalViewModel HospitalView;
+        public SchoolViewModel SchoolView;
+        public TownhouseViewModel TownhouseView;
+        public UniversityViewModel UniversityView;
+        public VillaViewModel VillaView;
+        public WarehouseViewModel WarehouseView;
 
 
 
@@ -78,7 +57,10 @@ namespace Modern_Real_Estate.ViewModel
             }
         }
 
-
+      public void SetView(object view)
+      {
+         CurrentView = view;
+      }
         public MainViewModel()
         {
             //fileHandler = new FileHandler();
@@ -101,15 +83,6 @@ namespace Modern_Real_Estate.ViewModel
             CurrentView = Home;
 
 
-            HomeViewCommand = new RelayCommand(o => { CurrentView = Home; });
-            ApartmentViewCommand = new RelayCommand(o => { CurrentView = ApartmentView; });
-            ShopViewCommand = new RelayCommand(o => { CurrentView = ShopView; });
-            HospitalViewCommand = new RelayCommand(o => { CurrentView = HospitalView; });
-            SchoolViewCommand = new RelayCommand(o => { CurrentView = SchoolView; });
-            TownhouseViewCommand = new RelayCommand(o => { CurrentView = TownhouseView; });
-            UniversityViewCommand = new RelayCommand(o => { CurrentView = UniversityView; });
-            VillaViewCommand = new RelayCommand(o => { CurrentView = VillaView; });
-            WarehouseViewCommand = new RelayCommand(o => { CurrentView = WarehouseView; });
             // NAVIGATION //
         }
 
@@ -162,7 +135,6 @@ namespace Modern_Real_Estate.ViewModel
             if ( openFileDialog.ShowDialog() == DialogResult.OK )
             {
                 string readFilePath = openFileDialog.FileName;
-                estateManager.DeSerialize(readFilePath);
             }
         }
 
@@ -179,7 +151,6 @@ namespace Modern_Real_Estate.ViewModel
             {
                 string fileName = saveFileDialog.FileName;
                 //estateManager.XMLSerialize(fileName);
-                estateManager.Serialize(fileName);
                 //using (FileStream fs = new FileStream(fileName, FileMode.Create))
                 //{
                 //    BinaryFormatter binaryFormatter = new BinaryFormatter();
@@ -197,10 +168,9 @@ namespace Modern_Real_Estate.ViewModel
         public void AddEstate()
         {
 
-            Estate apartment = new Apartment("hej", 2222, "stad", "land", 3, 73, 5000);
+           // Estate apartment = new Apartment("hej", 2222, "stad", "land", 3, 73, 5000);
 
 
-            estateManager.Add(apartment);
 
             //estateManager.ToStringList();
         }

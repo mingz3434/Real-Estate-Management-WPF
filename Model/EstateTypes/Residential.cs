@@ -30,7 +30,7 @@ namespace Modern_Real_Estate.Model.EstateTypes
             set
             {
                 _rooms = value;
-                OnPropertyChanged(nameof(Rooms));
+                //OnPropertyChanged(nameof(Rooms));
             }
         }
 
@@ -42,7 +42,7 @@ namespace Modern_Real_Estate.Model.EstateTypes
             set
             {
                 _sqrM = value;
-                OnPropertyChanged(nameof(SqrM));
+                //OnPropertyChanged(nameof(SqrM));
             }
         }
     }

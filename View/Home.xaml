@@ -26,9 +26,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <DataGrid
-                ItemsSource="{Binding estateManager.MyList}"
-                SelectedItem="{Binding SelectedEstate}"
+            <DataGrid x:Name="dataGrid1"
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False"
                 AutoGenerateColumns="False"
@@ -42,13 +40,13 @@
                     <DataGridTextColumn Header="City" Binding="{Binding City}" Width="4*"/>
                     <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="4*"/>
                     <DataGridTextColumn Header="Rooms" Binding="{Binding Rooms}" Width="4*"/>
-                    <DataGridTextColumn Header="Squre meter" Binding="{Binding SqrM}" Width="4*"/>
-                    <DataGridTextColumn Header="Squre meter" Binding="{Binding Type}" Width="4*"/>
+                    <DataGridTextColumn Header="Squre meter" Binding="{Binding Sqrm}" Width="4*"/>
+                    <DataGridTextColumn Header="Squre meter" Binding="{Binding Yype}" Width="4*"/>
                 </DataGrid.Columns>
             </DataGrid>
 
             <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="0" Margin="0,50,0,0" >
-                <Button Content="Add" Grid.Column="1" Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding AddCommand}" />
+                <Button Content="AddH" Grid.Column="1" Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding AddCommand}" Click="AddBtn_Click" />
                 <Button Content="Delete" Grid.Column="1" Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding DeleteCommand}" />
                 <Button Content="Save" Grid.Column="1" Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding SaveCommand}" />
                 <Button Content="Clear" Grid.Column="1" Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding ClearCommand}" />

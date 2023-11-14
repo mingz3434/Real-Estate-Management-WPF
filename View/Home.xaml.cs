@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Diagnostics;
+using Modern_Real_Estate.Model;
 namespace Modern_Real_Estate.View
 {
     public partial class Home : UserControl
@@ -22,5 +23,14 @@ namespace Modern_Real_Estate.View
             InitializeComponent();
            
         }
-    }
+
+     
+
+      private void AddBtn_Click(object sender, RoutedEventArgs e)
+      {
+         SM.HomeList.Add(new Estate(0, "Hong Fat Street", 00000, "HK", "HK", 51, 2.8, "HI"));
+         this.dataGrid1.ItemsSource = SM.HomeList;
+         Debug.WriteLine(SM.HomeList[0]);
+      }
+   }
 }

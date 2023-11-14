@@ -23,24 +23,21 @@ namespace Modern_Real_Estate.ViewModel
     public class ApartmentViewModel : ViewModelBase
     {
 
-        public EstateManager estateManager { get; set; }
-        public ObservableCollection<string> Countries { get; set; }
-        //public int SelectedIndex { get; set; }
-      
-        public int TextBoxValueId { get; set; }
-        public string TextBoxValueStreetName { get; set; }
-        public int TextBoxValueZipCode { get; set; }
-        public string TextBoxValueCity { get; set; }
-        public string TextBoxValueCountry { get; set; }
-        public int TextBoxValueArea { get; set; }
-        public int TextBoxValueRooms { get; set; }
-        public int TextBoxValueSqrM { get; set; }
-        public string TextBoxValueType { get; }
-        public double TextBoxValuePrice { get; set; }
-        public double TextBoxValueVATPrice { get; set; }
+        public ObservableCollection<string> Countries;
+        public int TextBoxValueId;
+        public string TextBoxValueStreetName;
+        public int TextBoxValueZipCode;
+        public string TextBoxValueCity;
+        public string TextBoxValueCountry;
+        public int TextBoxValueArea;
+        public int TextBoxValueRooms;
+        public int TextBoxValueSqrM;
+        public string TextBoxValueType;
+        public double TextBoxValuePrice;
+        public double TextBoxValueVATPrice;
 
 
-        public RelayCommand AddCommand => new RelayCommand(execute => AddEstate());
+        public RelayCommand AddCommand => new RelayCommand(_ => AddEstate());
         public RelayCommand DeleteCommand => new RelayCommand(execute => DeleteEstate(), canExecute => SelectedEstate != null);
         public RelayCommand SaveCommand => new RelayCommand(execute => UpdateEstate(), canExecute => CanSave());
         public RelayCommand ClearCommand => new RelayCommand(execute => ClearAll(), canExecute => CanSave());
@@ -51,7 +48,6 @@ namespace Modern_Real_Estate.ViewModel
         {
             Countries = new ObservableCollection<string>();
 
-            estateManager = EstateManager.GetInstance();
 
             //EstateManager.ToStringList();
 
@@ -77,70 +73,23 @@ namespace Modern_Real_Estate.ViewModel
             }
         }
 
-        private void UpdateTextBoxValues()
-        {
-                TextBoxValueStreetName = _selectedEstate?.StreetName ?? "";
-                TextBoxValueZipCode = _selectedEstate?.ZipCode ?? 0;
-                TextBoxValueCity = _selectedEstate?.City ?? "";
-                TextBoxValueCountry = _selectedEstate?.Country ?? "";
-                TextBoxValuePrice = _selectedEstate?.Price ?? 0;
-                if (_selectedEstate is Residential apartment)
-                {
-                    TextBoxValueArea = apartment.SqrM;
-                    TextBoxValueRooms = apartment.Rooms;
-                    TextBoxValueSqrM = apartment.SqrM;
-                }
-                else
-                {
-                    TextBoxValueRooms = 0;
-                    TextBoxValueSqrM = 0;
-                
-                }
 
-                OnPropertyChanged(nameof(TextBoxValueStreetName));
-                OnPropertyChanged(nameof(TextBoxValueZipCode));
-                OnPropertyChanged(nameof(TextBoxValueCity));
-                OnPropertyChanged(nameof(TextBoxValueCountry));
-                OnPropertyChanged(nameof(TextBoxValueRooms));
-                OnPropertyChanged(nameof(TextBoxValueSqrM));
-                OnPropertyChanged(nameof(TextBoxValuePrice));
-  
-        }
 
 
         private Estate _selectedEstate;
-        public Estate? SelectedEstate
+        public Estate SelectedEstate
         {
-
             get { return _selectedEstate; }
             set
             {
+                if (_selectedEstate != value)
+                {
                     _selectedEstate = value;
                     OnPropertyChanged(nameof(SelectedEstate));
-                    UpdateTextBoxValues();
-
+                    //UpdateTextBoxValues();
+                }
             }
         }
-
-        private int _selectedIndex;
-        public int SelectedIndex
-        {
-
-            get { return _selectedIndex; }
-            set
-            {
-                _selectedIndex = value;
-                OnPropertyChanged(nameof(SelectedIndex));
-                UpdateTextBoxValues();
-
-            }
-        }
-
-        public void Reset()
-        {
-            SelectedEstate = null;
-        }
-
 
         private Estate _selectedTextBoxValue;
         public Estate SelectedTextBoxValue
@@ -152,7 +101,7 @@ namespace Modern_Real_Estate.ViewModel
                 {
                     _selectedTextBoxValue = value;
                     OnPropertyChanged(nameof(SelectedTextBoxValue));
-                    UpdateTextBoxValues();
+                    //UpdateTextBoxValues();
                 }
             }
         }
@@ -160,20 +109,7 @@ namespace Modern_Real_Estate.ViewModel
 
         public void AddEstate()
         {
-            Estate newEstate = new Apartment(
-                TextBoxValueStreetName,
-                TextBoxValueZipCode,
-                TextBoxValueCity,
-                TextBoxValueCountry,
-                TextBoxValueRooms,
-                TextBoxValueSqrM,
-                TextBoxValuePrice
-            );
 
-            estateManager.Add(newEstate);
-
-            UpdateTextBoxValues();
-            Reset();
 
         }
 
@@ -181,7 +117,7 @@ namespace Modern_Real_Estate.ViewModel
         {
             if (SelectedEstate != null)
             {
-                estateManager.DeleteAt(SelectedIndex);
+                SM.ApartmentList.Remove(SelectedEstate);
             }
 
         }
@@ -205,14 +141,12 @@ namespace Modern_Real_Estate.ViewModel
                     var isUpdated = EstateList.Update(SelectedEstate, TextBoxValueStreetName, TextBoxValueZipCode, TextBoxValueCity, TextBoxValueCountry, TextBoxValueArea, imageBytes, TextBoxValueRooms, TextBoxValueSqrM, TextBoxValuePrice); 
                 if (isUpdated) 
                 {
-                    OnPropertyChanged(nameof(EstateManager));
                 }
             }
         }
 
         public void ClearAll()
         {
-            estateManager.ChangeAt(SelectedEstate, SelectedEstate.Id);
             //EstateManager.GetAt(SelectedEstate.Id);
             //EstateManager.CheckIndex(SelectedEstate.Id);
             //EstateManager.DeleteAll();

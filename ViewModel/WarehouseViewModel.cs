@@ -16,16 +16,16 @@ namespace Modern_Real_Estate.ViewModel
 {
     public class WarehouseViewModel : ViewModelBase
     {
-        public EstateManager estateManager { get; set; }
-        public ObservableCollection<string> Countries { get; set; }
-        public int TextBoxValueId { get; set; }
-        public string TextBoxValueStreetName { get; set; }
-        public int TextBoxValueZipCode { get; set; }
-        public string TextBoxValueCity { get; set; }
-        public string TextBoxValueCountry { get; set; }
-        public int TextBoxValueArea { get; set; }
-        public string TextBoxValueType { get; }
-        public double TextBoxValuePrice { get; set; }
+
+        public ObservableCollection<string> Countries;
+        public int TextBoxValueId;
+        public string TextBoxValueStreetName;
+        public int TextBoxValueZipCode;
+        public string TextBoxValueCity;
+        public string TextBoxValueCountry;
+        public int TextBoxValueArea;
+        public string TextBoxValueType;
+        public double TextBoxValuePrice;
 
         public RelayCommand AddCommand => new RelayCommand(execute => AddEstate());
         public RelayCommand DeleteCommand => new RelayCommand(execute => DeleteEstate(), canExecute => SelectedEstate != null);
@@ -35,7 +35,6 @@ namespace Modern_Real_Estate.ViewModel
 
         public WarehouseViewModel()
         {
-            estateManager = EstateManager.GetInstance();
             Countries = new ObservableCollection<string>();
 
 
@@ -63,20 +62,7 @@ namespace Modern_Real_Estate.ViewModel
 
         private void UpdateTextBoxValues()
         {
-            TextBoxValueStreetName = _selectedEstate?.StreetName ?? "";
-            TextBoxValueZipCode = _selectedEstate?.ZipCode ?? 0;
-            TextBoxValueCity = _selectedEstate?.City ?? "";
-            TextBoxValueCountry = _selectedEstate?.Country ?? "";
-            TextBoxValueArea = _selectedEstate?.Area ?? 0;
-            TextBoxValuePrice = _selectedEstate?.Price ?? 0;
-
-
-            OnPropertyChanged(nameof(TextBoxValueStreetName));
-            OnPropertyChanged(nameof(TextBoxValueZipCode));
-            OnPropertyChanged(nameof(TextBoxValueCity));
-            OnPropertyChanged(nameof(TextBoxValueCountry));
-            OnPropertyChanged(nameof(TextBoxValueArea));
-            OnPropertyChanged(nameof(TextBoxValuePrice));
+            
         }
 
 
@@ -113,18 +99,7 @@ namespace Modern_Real_Estate.ViewModel
 
         public void AddEstate()
         {
-            Estate newEstate = new Warehouse(
-                TextBoxValueStreetName,
-                TextBoxValueZipCode,
-                TextBoxValueCity,
-                TextBoxValueCountry,
-                TextBoxValueArea,
-                TextBoxValuePrice
-            );
-
-            EstateList.Create(newEstate);
-
-            UpdateTextBoxValues();
+          
 
         }
 
@@ -140,7 +115,6 @@ namespace Modern_Real_Estate.ViewModel
                 var isUpdated = EstateList.Update(SelectedEstate, TextBoxValueStreetName, TextBoxValueZipCode, TextBoxValueCity, TextBoxValueCountry, TextBoxValueArea, TextBoxValuePrice);
                 if (isUpdated)
                 {
-                    OnPropertyChanged(nameof(EstateManager));
                 }
             }
         }

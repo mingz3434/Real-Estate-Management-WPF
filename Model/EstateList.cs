@@ -58,92 +58,13 @@ namespace Modern_Real_Estate.Model
 
         public static bool Update(Estate estate, string? streetName = null, int? zipCode = null, string? city = null, string? country = null, int? area = null, byte[]? selectedImage = null, int? rooms = null, int? sqrM = null, double? price = null)
         {
-            int IdToFind = estate.Id;
 
-            Estate foundEstate = _sharedCollection.FirstOrDefault( e => e.Id == IdToFind );
-
-            if (foundEstate != null && foundEstate is Residential residential)
-            {
-                if (streetName != null)
-                {
-                    foundEstate.StreetName = streetName;
-                }
-
-                if (zipCode != null)
-                {
-                    foundEstate.ZipCode = zipCode.Value;
-                }
-
-                if (city != null)
-                {
-                    foundEstate.City = city;
-                }
-
-                if (country != null)
-                {
-                    foundEstate.Country = country;
-                }
-                if (area != null)
-                {
-                    foundEstate.Area = area.Value;
-                }
-                if (selectedImage != null)
-                {
-                    foundEstate.Image = selectedImage;
-                }
-                if (rooms != null)
-                {
-                    residential.Rooms = rooms.Value;
-                }
-
-                if (sqrM != null)
-                {
-                    residential.SqrM = sqrM.Value;
-                }
-                if (price != null)
-                {
-                    foundEstate.Price = foundEstate.CalculatePrice(price.Value);
-                }
-            }
             return true;
 
         }
         public static bool Update(Estate estate, string streetName, int zipCode, string city, string country, int? area = null, double? price = null)
         {
-            int IdToFind = estate.Id;
 
-            Estate foundEstate = _sharedCollection.FirstOrDefault(e => e.Id == IdToFind);
-
-            if (foundEstate != null)
-            {
-                if (streetName != null)
-                {
-                    foundEstate.StreetName = streetName;
-                }
-
-                if (zipCode != null)
-                {
-                    foundEstate.ZipCode = zipCode;
-                }
-
-                if (city != null)
-                {
-                    foundEstate.City = city;
-                }
-
-                if (country != null)
-                {
-                    foundEstate.Country = country;
-                }
-                if (area != null)
-                {
-                    foundEstate.Area = area.Value;
-                }
-                if (price != null)
-                {
-                    foundEstate.Price = foundEstate.CalculatePrice(price.Value);
-                }
-            }
             return true;
 
         }

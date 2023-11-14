@@ -12,24 +12,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Modern_Real_Estate.Model.EstateTypes;
 
 namespace Modern_Real_Estate.ViewModel
 {
     public class TownhouseViewModel : ViewModelBase
     {
-        public EstateManager estateManager { get; set; }
-        public ObservableCollection<string> Countries { get; set; }
-        public int TextBoxValueId { get; set; }
-        public string TextBoxValueStreetName { get; set; }
-        public int TextBoxValueZipCode { get; set; }
-        public string TextBoxValueCity { get; set; }
-        public string TextBoxValueCountry { get; set; }
-        public int TextBoxValueArea { get; set; }
-        public int TextBoxValueRooms { get; set; }
-        public int TextBoxValueSqrM { get; set; }
-        public string TextBoxValueType { get; }
-        public double TextBoxValuePrice { get; set; }
+        public ObservableCollection<string> Countries;
+        public int TextBoxValueId;
+        public string TextBoxValueStreetName;
+        public int TextBoxValueZipCode;
+        public string TextBoxValueCity;
+        public string TextBoxValueCountry;
+        public int TextBoxValueArea;
+        public int TextBoxValueRooms;
+        public int TextBoxValueSqrM;
+        public string TextBoxValueType;
+        public double TextBoxValuePrice;
 
 
         public RelayCommand AddCommand => new RelayCommand(execute => AddEstate());
@@ -40,7 +38,6 @@ namespace Modern_Real_Estate.ViewModel
 
         public TownhouseViewModel()
         {
-            estateManager = EstateManager.GetInstance();
             Countries = new ObservableCollection<string>();
 
 
@@ -68,33 +65,7 @@ namespace Modern_Real_Estate.ViewModel
 
         private void UpdateTextBoxValues()
         {
-            TextBoxValueStreetName = _selectedEstate?.StreetName ?? "";
-            TextBoxValueZipCode = _selectedEstate?.ZipCode ?? 0;
-            TextBoxValueCity = _selectedEstate?.City ?? "";
-            TextBoxValueCountry = _selectedEstate?.Country ?? "";
-            TextBoxValueArea = _selectedEstate?.Area ?? 0;
-            TextBoxValuePrice = _selectedEstate?.Price ?? 0;
-            if (_selectedEstate is Residential townhouse)
-            {
-                TextBoxValueArea = townhouse.SqrM;
-                TextBoxValueRooms = townhouse.Rooms;
-                TextBoxValueSqrM = townhouse.SqrM;
-            }
-            else
-            {
-                TextBoxValueRooms = 0;
-                TextBoxValueSqrM = 0;
-            }
-
-
-            OnPropertyChanged(nameof(TextBoxValueStreetName));
-            OnPropertyChanged(nameof(TextBoxValueZipCode));
-            OnPropertyChanged(nameof(TextBoxValueCity));
-            OnPropertyChanged(nameof(TextBoxValueCountry));
-            OnPropertyChanged(nameof(TextBoxValueArea));
-            OnPropertyChanged(nameof(TextBoxValueRooms));
-            OnPropertyChanged(nameof(TextBoxValueSqrM));
-            OnPropertyChanged(nameof(TextBoxValuePrice));
+            
         }
 
 
@@ -131,20 +102,7 @@ namespace Modern_Real_Estate.ViewModel
 
         public void AddEstate()
         {
-            Estate newEstate = new Townhouse(
-                TextBoxValueStreetName,
-                TextBoxValueZipCode,
-                TextBoxValueCity,
-                TextBoxValueCountry,
-                TextBoxValueArea,
-                TextBoxValueRooms,
-                TextBoxValueSqrM,
-                TextBoxValuePrice
-            );
 
-            EstateList.Create(newEstate);
-
-            UpdateTextBoxValues();
 
         }
 
@@ -171,7 +129,6 @@ namespace Modern_Real_Estate.ViewModel
                 var isUpdated = EstateList.Update(SelectedEstate, TextBoxValueStreetName, TextBoxValueZipCode, TextBoxValueCity, TextBoxValueCountry, TextBoxValueArea, imageBytes, TextBoxValueRooms, TextBoxValueSqrM, TextBoxValuePrice);
                 if (isUpdated)
                 {
-                    OnPropertyChanged(nameof(EstateManager));
                 }
             }
         }
