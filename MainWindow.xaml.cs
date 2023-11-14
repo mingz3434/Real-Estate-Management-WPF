@@ -1,5 +1,4 @@
 ﻿using Modern_Real_Estate.View;
-using Modern_Real_Estate.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +23,6 @@ namespace Modern_Real_Estate
         {
             List<Estate> HomeList = new List<Estate>(); SM.HomeList = HomeList;
             InitializeComponent();
-            DataContext = new MainViewModel();
         }
 
       private void Apartment_Checked(object sender, RoutedEventArgs e)
