@@ -5,14 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:Modern_Real_Estate.View"
-             xmlns:viewModel="clr-namespace:Modern_Real_Estate.ViewModel"
              xmlns:model="clr-namespace:Modern_Real_Estate.Model" 
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="900"
              Background="white">
-    <UserControl.DataContext>
-        <viewModel:HomeViewModel />
-    </UserControl.DataContext>
 
     <Grid>
         <Grid>

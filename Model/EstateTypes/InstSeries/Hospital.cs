@@ -13,7 +13,6 @@ namespace Modern_Real_Estate.Model.EstateTypes
         {
             get { return "Hospital"; }
         }
-        public Hospital() { }
 
     }
 }

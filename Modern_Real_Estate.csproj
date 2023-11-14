@@ -20,4 +20,8 @@
     <Page Include="App.xaml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="_Widgets\" />
+  </ItemGroup>
+
 </Project>

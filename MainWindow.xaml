@@ -4,15 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Modern_Real_Estate"
-        xmlns:viewModel="clr-namespace:Modern_Real_Estate.ViewModel"
         xmlns:Model="clr-namespace:Modern_Real_Estate.Model"
         xmlns:Menu="clr-namespace:Modern_Real_Estate.Utilities"
         x:Class="Modern_Real_Estate.MainWindow"
         mc:Ignorable="d"
         Title="Modern Real Estates by Emelie Hansson" Height="650" Width="1000">
-    <Window.DataContext>
-        <viewModel:MainViewModel />
-    </Window.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
