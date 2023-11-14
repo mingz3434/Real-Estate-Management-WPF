@@ -194,5 +194,61 @@ namespace Modern_Real_Estate.Widgets{
          }
       }
 
+      public static void DeleteEntry(DataGrid dataGrid, UserControl userControl, Estate estate){
+         if(userControl is Home){
+            Estate matchResult = SM.HomeList.First(_=>_.Id==estate.Id);
+            SM.HomeList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.HomeList;
+         }
+         if (userControl is ApartmentView){
+            Estate matchResult = SM.ApartmentList.First(_=>_.Id==estate.Id);
+            SM.ApartmentList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.ApartmentList;
+         }
+         if (userControl is HospitalView){
+            Estate matchResult = SM.HospitalList.First(_=>_.Id==estate.Id);
+            SM.HospitalList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.HospitalList;
+         }
+         if (userControl is SchoolView){
+            Estate matchResult = SM.SchoolList.First(_=>_.Id==estate.Id);
+            SM.SchoolList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.SchoolList;
+         }
+         if (userControl is ShopView){
+            Estate matchResult = SM.ShopList.First(_=>_.Id==estate.Id);
+            SM.ShopList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.ShopList;
+         }
+         if (userControl is TownhouseView){
+            Estate matchResult = SM.TownhouseList.First(_=>_.Id==estate.Id);
+            SM.TownhouseList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.TownhouseList;
+         }
+         if (userControl is UniversityView){
+            Estate matchResult = SM.UniversityList.First(_=>_.Id==estate.Id);
+            SM.UniversityList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.UniversityList;
+         }
+         if (userControl is VillaView){
+            Estate matchResult = SM.VillaList.First(_=>_.Id==estate.Id);
+            SM.VillaList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.VillaList;
+         }
+         if (userControl is WarehouseView){
+            Estate matchResult = SM.WarehouseList.First(_=>_.Id==estate.Id);
+            SM.WarehouseList.Remove(matchResult);
+
+            dataGrid.ItemsSource = SM.WarehouseList;
+         }
+      }
    }
 }
