@@ -39,19 +39,19 @@
 
             <StackPanel Grid.Column="1">
                 <Label Content="Street name" />
-                <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValueStreetName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_StreetName" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueStreetName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Zip code" />
-                <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValueZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="tb_ZipCode" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="City" />
-                <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValueCity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_City" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueCity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Country" />
-                <ComboBox ItemsSource="{Binding Countries}"
+                <ComboBox x:Name="cb_Country" ItemsSource="{Binding Countries}"
                           SelectedItem="{Binding selectedCountry}"
                           Text="{Binding TextBoxValueCountry, Mode=TwoWay}" />
                 <Label Content="Area" />
-                <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValueArea, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_Area" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueArea, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Price" />
-                <TextBox Margin="5, 0, 5, 15" Text="{Binding TextBoxValuePrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_Price" Margin="5, 0, 5, 15" Text="{Binding TextBoxValuePrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="Delete"  Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding DeleteCommand}" />
                     <Button Content="Save"  Width="90" Height="30" Margin="0, 0, 5, 0" Command="{Binding SaveCommand}" />

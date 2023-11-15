@@ -36,6 +36,8 @@ namespace Modern_Real_Estate.Widgets{
          if (userControl is ApartmentView){
             SM.ApartmentList.Add(estate);
             dataGrid.ItemsSource = SM.ApartmentList;
+            dataGrid.Items.Refresh();
+            
          }
          if (userControl is HospitalView){
             SM.HospitalList.Add(estate);
