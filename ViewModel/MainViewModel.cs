@@ -40,7 +40,7 @@ namespace Modern_Real_Estate.ViewModel
         public RelayCommand VillaViewCommand { get; set; }
         public RelayCommand WarehouseViewCommand { get; set; }
 
-        //public RelayCommand MenuItem_New => new RelayCommand(execute => NewFile());
+        public RelayCommand MenuItem_New => new RelayCommand(execute => NewFile());
         public RelayCommand MenuItem_Open => new RelayCommand(execute => OpenFile());
         public RelayCommand MenuItem_Save => new RelayCommand(execute => SaveFile());
         public RelayCommand MenuItem_Exit => new RelayCommand(execute => ExitMenu());
@@ -147,6 +147,9 @@ namespace Modern_Real_Estate.ViewModel
 
         //}
 
+        public void NewFile(){
+        
+        }
         public void OpenFile()
         {
             //FileHandler fileHandler = new FileHandler();
