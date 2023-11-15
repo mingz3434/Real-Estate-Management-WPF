@@ -27,27 +27,34 @@ namespace Modern_Real_Estate.View
          dataGrid = dataGrid1;
       }
 
-   private void AddBtn_Click(object sender, RoutedEventArgs e)
-   {
-      OneForAll.AddEntry(dataGrid1,this,
-         new Apartment(
-               id: SM.ApartmentList.Count,
-               streetName: tb_StreetName.Text,
-               zipCode: Convert.ToInt16(tb_ZipCode.Text),
-               city: tb_City.Text,
-               country: cb_Country.SelectedItem == null ? "" : cb_Country.SelectedItem.ToString(),
-               area: Convert.ToDouble(tb_Area.Text),
-               price: Convert.ToDouble(tb_Price.Text),
-               rate: (double)0.12f,
-               imagePath: "",
-               rooms:2
-         )
-      );
+      private void AddBtn_Click(object sender, RoutedEventArgs e)
+      {
+         OneForAll.AddEntry(dataGrid1,this,
+            new Apartment(
+                  id: SM.ApartmentList.Count,
+                  streetName: tb_StreetName.Text,
+                  zipCode: Convert.ToInt16(tb_ZipCode.Text),
+                  city: tb_City.Text,
+                  country: cb_Country.SelectedItem == null ? "" : cb_Country.SelectedItem.ToString(),
+                  area: Convert.ToDouble(tb_Area.Text),
+                  price: Convert.ToDouble(tb_Price.Text),
+                  rate: (double)0.12f,
+                  imagePath: "",
+                  rooms:2
+            )
+         );
+      }
+
+      public void DeleteBtn_Click(object sender, RoutedEventArgs e){
+         OneForAll.DeleteEntry(dataGrid1,this,(Modern_Real_Estate.Model.Estate)dataGrid1.SelectedItem);
+      
+      }
    }
 
-   public void DeleteBtn_Click(object sender, RoutedEventArgs e){
-      OneForAll.DeleteEntry(dataGrid1,this);
-   
+
+   public static class ObjEx{
+      // public static Modern_Real_Estate.Model.Estate ToEstate(this object selectedItem){
+      //    return selectedItem as Estate;
+      // }
    }
-}
 }

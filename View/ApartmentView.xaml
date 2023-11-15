@@ -29,7 +29,7 @@
                 CanUserDeleteRows="False"
                 AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="2*"/>
+                    <DataGridTextColumn Header="Id" Binding="{Binding DummyId}" Width="2*"/>
                     <DataGridTextColumn Header="Street name" Binding="{Binding StreetName}" Width="4*"/>
                     <DataGridTextColumn Header="Zip code" Binding="{Binding ZipCode}" Width="4*"/>
                     <DataGridTextColumn Header="City" Binding="{Binding City}" Width="4*"/>
@@ -65,7 +65,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="Delete"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding DeleteCommand}" />
                     <Button Content="Save"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding SaveCommand}" />
-                    <Button Content="Add"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding AddCommand}" Click="AddBtn_Click" />
+                    <Button Content="Add"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding DCS_AddBtnClick}"  />
                     <Button Content="Clear"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding ClearCommand}" />
 
                 </StackPanel>
