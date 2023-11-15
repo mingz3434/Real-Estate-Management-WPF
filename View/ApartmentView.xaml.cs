@@ -27,11 +27,27 @@ namespace Modern_Real_Estate.View
          dataGrid = dataGrid1;
       }
 
-   private void Button_Click(object sender, RoutedEventArgs e)
+   private void AddBtn_Click(object sender, RoutedEventArgs e)
    {
       OneForAll.AddEntry(dataGrid1,this,
-         new Apartment(0,"",0,"","",59.6,2800000,.12f,"",2));
-      dataGrid1.ItemsSource = SM.ApartmentList;
+         new Apartment(
+               id: SM.ApartmentList.Count,
+               streetName: tb_StreetName.Text,
+               zipCode: Convert.ToInt16(tb_ZipCode.Text),
+               city: tb_City.Text,
+               country: cb_Country.SelectedItem == null ? "" : cb_Country.SelectedItem.ToString(),
+               area: Convert.ToDouble(tb_Area.Text),
+               price: Convert.ToDouble(tb_Price.Text),
+               rate: (double)0.12f,
+               imagePath: "",
+               rooms:2
+         )
+      );
+   }
+
+   public void DeleteBtn_Click(object sender, RoutedEventArgs e){
+      OneForAll.DeleteEntry(dataGrid1,this);
+   
    }
 }
 }
