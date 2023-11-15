@@ -24,26 +24,31 @@ namespace Modern_Real_Estate.Model{
    [XmlInclude(typeof(Villa))]
    [XmlInclude(typeof(Warehouse))]
    public class Estate{
-      //Fuck all properties.
-      public int Id { get; set; } public string StreetName { get; set; } public int ZipCode { get; set; } public string City { get; set; } public string Country { get; set; } public int Area { get; set; } public double Price { get; set; } public string ImagePath { get; set; }
+      public int Id { get; set; } public string StreetName { get; set; } public int ZipCode { get; set; }
+      public string City { get; set; } public string Country { get; set; }
+      public double Area_InSqm { get; set; } public double Price { get; set; } 
+      public double Rate { get; set; } public double TaxedPrice { get; set; } public int PricePerSqm { get; set; }
+      public string ImagePath { get; set; }
 
-
-      public Estate() { }
-
-      public Estate(int id, string streetName, int zipCode, string city, string country, int area, double price, string imagePath){
+      public Estate(int id, string streetName, int zipCode, string city, string country, double area, double price, double rate, string imagePath){
          this.Id = id; this.StreetName = streetName; this.ZipCode = zipCode;
-         this.City = city; this.Country = country; this.Area = area;
+         this.City = city; this.Country = country; this.Area_InSqm = area;
          this.Price = price; this.ImagePath = imagePath;
+
+         this.TaxedPrice = this.CalculateTaxedPrice(price, this.Rate);
+         this.PricePerSqm = (int)Math.Round(this.Price / this.Area_InSqm);
+
 
       }
 
 
-
-      public virtual void CalculatePrice(double price) { }
+      public virtual double CalculateTaxedPrice(double price, double rate) {
+         return price * (1 + rate);
+      }
 
       public override string ToString()
       {
-         return "id: " + Id + " streetName: " + StreetName + " zipCode: " + ZipCode + " city: " + City + " country: " + Country + " area: " + Area + " price: " + Price + " imagepath: " + ImagePath;
+         return "id: " + Id + " streetName: " + StreetName + " zipCode: " + ZipCode + " city: " + City + " country: " + Country + " area: " + Area_InSqm + " price: " + Price + " imagepath: " + ImagePath;
       }
 
 

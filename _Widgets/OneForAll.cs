@@ -72,7 +72,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -86,7 +86,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -100,7 +100,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -114,7 +114,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -129,7 +129,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -143,7 +143,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -157,7 +157,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -171,7 +171,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 
@@ -185,7 +185,7 @@ namespace Modern_Real_Estate.Widgets{
             matchResult.ZipCode = entry.ZipCode;
             matchResult.City = entry.City;
             matchResult.Country = entry.Country;
-            matchResult.Area = entry.Area;
+            matchResult.Area_InSqm = entry.Area_InSqm;
             matchResult.Price = entry.Price;
             matchResult.ImagePath = entry.ImagePath;
 

@@ -36,8 +36,7 @@
                     <DataGridTextColumn Header="City" Binding="{Binding City}" Width="4*"/>
                     <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="4*"/>
                     <DataGridTextColumn Header="Rooms" Binding="{Binding Rooms}" Width="4*"/>
-                    <DataGridTextColumn Header="Squre meter" Binding="{Binding Sqrm}" Width="4*"/>
-                    <DataGridTextColumn Header="Squre meter" Binding="{Binding Yype}" Width="4*"/>
+                    <DataGridTextColumn Header="Area" Binding="{Binding Area}" Width="4*"/>
                 </DataGrid.Columns>
             </DataGrid>
 

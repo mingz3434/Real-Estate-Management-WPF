@@ -14,30 +14,15 @@ using Modern_Real_Estate.Utilities;
 namespace Modern_Real_Estate.Model.EstateTypes
 {
     [XmlInclude(typeof(Residential))]
-    public abstract class Residential : Estate
+    public class Residential : Estate
     {
+        public int Rooms { get; set; }
+        public Residential(int id, string streetName, int zipCode, string city, string country,
+            double area, double price, double rate, string imagePath, int rooms) :
+            base( id, streetName, zipCode, city, country, area, price, rate, imagePath){
 
-        private int _rooms;
-        public int Rooms
-        {
-            get { return _rooms; }
-            set
-            {
-                _rooms = value;
-                //OnPropertyChanged(nameof(Rooms));
-            }
-        }
-
-
-        private int _sqrM;
-        public int SqrM
-        {
-            get { return _sqrM; }
-            set
-            {
-                _sqrM = value;
-                //OnPropertyChanged(nameof(SqrM));
-            }
+            this.Rooms = rooms;
+            
         }
     }
 }

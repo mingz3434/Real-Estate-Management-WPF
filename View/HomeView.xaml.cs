@@ -28,7 +28,7 @@ namespace Modern_Real_Estate.View
 
       private void AddBtn_Click(object sender, RoutedEventArgs e)
       {
-         SM.HomeList.Add(new Estate(0, "Hong Fat Street", 00000, "HK", "HK", 51, 2.8, "HI"));
+         SM.HomeList.Add(new Estate(0, "Hong Fat Street", 00000, "HK", "HK", 41,2800000,0.15f,""));
          this.dataGrid1.ItemsSource = SM.HomeList;
          Debug.WriteLine(SM.HomeList[0]);
       }
