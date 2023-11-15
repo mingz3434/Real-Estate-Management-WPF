@@ -20,9 +20,11 @@ namespace Modern_Real_Estate.View
     /// </summary>
     public partial class UniversityView : UserControl
     {
+        public DataGrid dataGrid;
         public UniversityView()
         {
             InitializeComponent();
+            dataGrid = dataGrid1;
         }
     }
 }

@@ -17,9 +17,11 @@ namespace Modern_Real_Estate.View
 {
     public partial class ShopView : UserControl
     {
+        public DataGrid dataGrid;
         public ShopView()
         {
             InitializeComponent();
+            dataGrid = dataGrid1;
         }
     }
 }

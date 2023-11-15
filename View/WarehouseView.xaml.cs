@@ -20,9 +20,11 @@ namespace Modern_Real_Estate.View
     /// </summary>
     public partial class WarehouseView : UserControl
     {
+        public DataGrid dataGrid;
         public WarehouseView()
         {
             InitializeComponent();
+            dataGrid = dataGrid1;
         }
     }
 }

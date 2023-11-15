@@ -20,9 +20,11 @@ namespace Modern_Real_Estate.View
     /// </summary>
     public partial class VillaView : UserControl
     {
+        public DataGrid dataGrid;
         public VillaView()
         {
             InitializeComponent();
+            dataGrid = dataGrid1;
         }
     }
 }

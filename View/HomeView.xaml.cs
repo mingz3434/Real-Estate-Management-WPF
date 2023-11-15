@@ -18,10 +18,12 @@ namespace Modern_Real_Estate.View
 {
     public partial class HomeView : UserControl
     {
+        public DataGrid dataGrid ;
         public HomeView()
         {
+         
             InitializeComponent();
-           
+            dataGrid = this.dataGrid1;
         }
 
      

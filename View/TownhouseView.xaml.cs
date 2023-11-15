@@ -15,14 +15,13 @@ using System.Windows.Shapes;
 
 namespace Modern_Real_Estate.View
 {
-    /// <summary>
-    /// Interaction logic for TownhouseView.xaml
-    /// </summary>
     public partial class TownhouseView : UserControl
     {
+        public DataGrid dataGrid;
         public TownhouseView()
         {
             InitializeComponent();
+            dataGrid = dataGrid1;
         }
     }
 }

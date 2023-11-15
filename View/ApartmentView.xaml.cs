@@ -18,18 +18,20 @@ using Modern_Real_Estate.Model.EstateTypes;
 
 namespace Modern_Real_Estate.View
 {
-    public partial class ApartmentView : UserControl
-    {
-        public ApartmentView()
-        {
-            InitializeComponent();
-        }
+   public partial class ApartmentView : UserControl{
+   
+      public DataGrid dataGrid;
 
-      private void Button_Click(object sender, RoutedEventArgs e)
-      {
-         OneForAll.AddEntry(dataGrid1,this,
-            new Apartment(0,"",0,"","",59.6,2800000,.12f,"",2));
-         dataGrid1.ItemsSource = SM.ApartmentList;
+      public ApartmentView(){
+         InitializeComponent();
+         dataGrid = dataGrid1;
       }
+
+   private void Button_Click(object sender, RoutedEventArgs e)
+   {
+      OneForAll.AddEntry(dataGrid1,this,
+         new Apartment(0,"",0,"","",59.6,2800000,.12f,"",2));
+      dataGrid1.ItemsSource = SM.ApartmentList;
    }
+}
 }

@@ -19,7 +19,7 @@
                 <ColumnDefinition Width="4*" />
             </Grid.ColumnDefinitions>
 
-            <DataGrid 
+            <DataGrid x:Name="dataGrid1"
                 ItemsSource="{Binding Estates.Estates}"
                 SelectedItem="{Binding SelectedEstate}"
                 CanUserAddRows="False" 

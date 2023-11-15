@@ -20,9 +20,11 @@ namespace Modern_Real_Estate.View
     /// </summary>
     public partial class HospitalView : UserControl
     {
+        public DataGrid dataGrid;
         public HospitalView()
         {
             InitializeComponent();
+            dataGrid = this.dataGrid1;
         }
     }
 }

@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using Modern_Real_Estate.View;
 using Modern_Real_Estate.Model;
+using System.Diagnostics;
 namespace Modern_Real_Estate.Widgets{
    //Home,Apartment,Hospital,School,Shop,Townhouse,University,Villa,Warehouose
    public static class OneForAll{
 
       public static void ViewEntries(DataGrid dataGrid, UserControl userControl){
+         Debug.WriteLine("dataGrid"+dataGrid);
+         Debug.WriteLine("userControl"+userControl);
+         Debug.WriteLine("dataGrid.ItemsSource"+dataGrid.ItemsSource);
+         Debug.WriteLine(SM.HomeList);
          if(userControl is HomeView){ dataGrid.ItemsSource = SM.HomeList; }
          if(userControl is ApartmentView){ dataGrid.ItemsSource = SM.ApartmentList; }
          if(userControl is HospitalView){ dataGrid.ItemsSource = SM.HospitalList; }
