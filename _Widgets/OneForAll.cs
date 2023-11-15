@@ -11,7 +11,7 @@ namespace Modern_Real_Estate.Widgets{
    public static class OneForAll{
 
       public static void ViewEntries(DataGrid dataGrid, UserControl userControl){
-         if(userControl is Home){ dataGrid.ItemsSource = SM.HomeList; }
+         if(userControl is HomeView){ dataGrid.ItemsSource = SM.HomeList; }
          if(userControl is ApartmentView){ dataGrid.ItemsSource = SM.ApartmentList; }
          if(userControl is HospitalView){ dataGrid.ItemsSource = SM.HospitalList; }
          if(userControl is SchoolView){ dataGrid.ItemsSource = SM.SchoolList; }
@@ -24,7 +24,7 @@ namespace Modern_Real_Estate.Widgets{
 
 
       public static void AddEntry(DataGrid dataGrid, UserControl userControl, Estate estate){
-         if(userControl is Home){
+         if(userControl is HomeView){
             SM.HomeList.Add(estate);
             dataGrid.ItemsSource = SM.HomeList;
          }
@@ -65,7 +65,7 @@ namespace Modern_Real_Estate.Widgets{
       }
 
       public static void EditEntry(DataGrid dataGrid, UserControl userControl, Estate entry){
-         if(userControl is Home){
+         if(userControl is HomeView){
             Estate matchResult = SM.HomeList.First(_=>_.Id==entry.Id);
             matchResult.Id = entry.Id;
             matchResult.StreetName = entry.StreetName;
@@ -195,7 +195,7 @@ namespace Modern_Real_Estate.Widgets{
       }
 
       public static void DeleteEntry(DataGrid dataGrid, UserControl userControl, Estate estate){
-         if(userControl is Home){
+         if(userControl is HomeView){
             Estate matchResult = SM.HomeList.First(_=>_.Id==estate.Id);
             SM.HomeList.Remove(matchResult);
 

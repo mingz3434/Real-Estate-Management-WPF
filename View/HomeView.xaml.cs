@@ -16,9 +16,9 @@ using System.Diagnostics;
 using Modern_Real_Estate.Model;
 namespace Modern_Real_Estate.View
 {
-    public partial class Home : UserControl
+    public partial class HomeView : UserControl
     {
-        public Home()
+        public HomeView()
         {
             InitializeComponent();
            

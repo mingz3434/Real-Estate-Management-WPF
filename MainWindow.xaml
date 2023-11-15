@@ -8,7 +8,8 @@
         xmlns:Menu="clr-namespace:Modern_Real_Estate.Utilities"
         x:Class="Modern_Real_Estate.MainWindow"
         mc:Ignorable="d"
-        Title="Modern Real Estates by Emelie Hansson" Height="650" Width="1000">
+        Title="Modern Real Estates by Emelie Hansson" WindowStartupLocation="CenterScreen" Height="650" Width="1400"
+        Loaded="Home_Checked">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -37,7 +38,7 @@
                          Height="40" 
                          Margin="0, 0, 5, 0" 
                          Style="{StaticResource ButtonStyle}"
-                         IsChecked="True"/>
+                         Checked="Home_Checked"/>
             <RadioButton Name="Apartment"   
                          Height="40" 
                          Margin="0, 0, 5, 0" 
@@ -45,34 +46,34 @@
             <RadioButton Name="Villa"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="Villa_Checked"/>
             <RadioButton Name="Townhouse"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="Townhouse_Checked"/>
             <RadioButton Name="Hospital"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="Hospital_Checked"/>
             <RadioButton Name="School"   
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="School_Checked"/>
             <RadioButton Name="University"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="University_Checked"/>
             <RadioButton Name="Warehouse"  
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="Warehouse_Checked"/>
             <RadioButton Name="Shop"   
                          Height="40" 
                          Margin="0, 0, 5, 0" 
-                         Style="{StaticResource ButtonStyle}"/>
+                         Style="{StaticResource ButtonStyle}" Checked="Shop_Checked"/>
         </StackPanel>
 
-        <ContentControl Name="Content" Grid.Column="2" Grid.ColumnSpan="1" Grid.RowSpan="3" Content="{Binding CurrentView}"/>
+        <ContentControl Name="contentControl1" Grid.Column="2" Grid.ColumnSpan="1" Grid.RowSpan="3" />
         <!--<TextBox Grid.Column="2" Grid.Row="3" Text="{Binding MyList}" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True"/>-->
 
     </Grid>

@@ -14,16 +14,6 @@ public static class SM{
    public static List<Estate> VillaList = null;
    public static List<Estate> WarehouseList = null;
 
-   public static List<object> HomeUIObjects = null; // You can make ref here like : [0] = XXX , [1] = XXX
-   public static List<object> MainUIObjects = null;
-   public static List<object> ApartmentUIObjects = null;
-   public static List<object> HospitalUIObjects = null;
-   public static List<object> SchoolUIObjects = null;
-   public static List<object> ShopUIObjects = null;
-   public static List<object> TownhouseUIObjects = null;
-   public static List<object> UniversityUIObjects = null;
-   public static List<object> VillaUIObjects = null;
-   public static List<object> WarehouseUIObjects = null;
 
 
 }
