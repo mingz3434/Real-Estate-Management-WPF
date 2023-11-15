@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Modern_Real_Estate.Model.EstateTypes
 {
-    public class Townhouse : Residential
+    public class Townhouse 
     {
-        private string _subType;
-        public string SubType
+        public Townhouse(int id, string streetName, int zipCode, string city, string country, double area, double price, double rate, string imagePath, int rooms) 
         {
-            get { return "Townhouse"; }
         }
-        public Townhouse() { }
-
     }
 }

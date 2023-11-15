@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Modern_Real_Estate.Widgets;
+using Modern_Real_Estate.Model.EstateTypes;
+
 
 namespace Modern_Real_Estate.View
 {
@@ -24,6 +27,8 @@ namespace Modern_Real_Estate.View
 
       private void Button_Click(object sender, RoutedEventArgs e)
       {
+         OneForAll.AddEntry(dataGrid1,this,
+            new Apartment(0,"",0,"","",59.6,2800000,.12f,"",2));
          dataGrid1.ItemsSource = SM.ApartmentList;
       }
    }

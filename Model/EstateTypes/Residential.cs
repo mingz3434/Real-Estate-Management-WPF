@@ -19,7 +19,7 @@ namespace Modern_Real_Estate.Model.EstateTypes
         public int Rooms { get; set; }
         public Residential(int id, string streetName, int zipCode, string city, string country,
             double area, double price, double rate, string imagePath, int rooms) :
-            base( id, streetName, zipCode, city, country, area, price, rate, imagePath){
+            base( id=0, streetName, zipCode, city, country, area, price, rate, imagePath){
 
             this.Rooms = rooms;
             

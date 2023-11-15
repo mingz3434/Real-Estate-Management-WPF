@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Modern_Real_Estate.Model.EstateTypes
 {
-    public class University : Institutional
+    public class University 
     {
-        private string _subType;
-        public string SubType
+        public University(int id, string streetName, int zipCode, string city, string country, 
+        double area, double price, double rate, string imagePath)
         {
-            get { return "University"; }
         }
-        public University() { }
-
+      public University() { }
     }
 }

@@ -8,15 +8,8 @@ namespace Modern_Real_Estate.Model.EstateTypes
 {
     public class Shop : Commercial
     {
-        private string _subType;
-        public string SubType
+        protected Shop(int id, string streetName, int zipCode, string city, string country, double area, double price, double rate, string imagePath) : base(id, streetName, zipCode, city, country, area, price, rate, imagePath)
         {
-            get { return "Shop"; }
         }
-        public Shop() { }
-
-
-
-
     }
 }

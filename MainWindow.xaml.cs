@@ -55,6 +55,15 @@ namespace Modern_Real_Estate{
     public partial class MainWindow : Window{
       public MainWindow(){
          List<Estate> HomeList = new List<Estate>(); SM.HomeList = HomeList;
+         List<Estate> ApartmentList = new List<Estate>(); SM.ApartmentList = ApartmentList;
+         List<Estate> VillaList = new List<Estate>(); SM.VillaList = VillaList;
+         List<Estate> TownhouseList = new List<Estate>(); SM.TownhouseList = TownhouseList;
+         List<Estate> HospitalList = new List<Estate>(); SM.HospitalList = HospitalList;
+         List<Estate> SchoolList = new List<Estate>(); SM.SchoolList = SchoolList;
+         List<Estate> UniversityList = new List<Estate>(); SM.UniversityList = UniversityList;
+         List<Estate> WarehouseList = new List<Estate>(); SM.WarehouseList = WarehouseList;
+         List<Estate> ShopList = new List<Estate>(); SM.ShopList = ShopList;
+         
          InitializeComponent();
       }
 
