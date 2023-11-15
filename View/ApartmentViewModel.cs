@@ -16,14 +16,13 @@ namespace Modern_Real_Estate.View{
       // public string ImagePath { get; set; }
       // public string Category { get; set; } public string Type { get; set; }
 
-      #region Part A : Props
-      public int _dummyId;
-      public int DummyId { get{return _dummyId;} set{if(_dummyId !=value){_dummyId= value;_OPC_M(DummyId);}} } public string DummyAddress { get; set; } = string.Empty;
-      // public int DummyZipCode { get; set; } public string DummyCity { get; set; } = string.Empty; public string DummyCountry { get; set; } = string.Empty;
-      // public double DummyArea_InSqm { get; set; } public double DummyPrice { get; set; }
-      // public double DummyRate { get; set; } public double DummyTaxedPrice { get; set; } public int DummyPricePerSqm { get; set; }
-      // public string DummyImagePath { get; set; } = string.Empty; 
-      // public string DummyCategory { get; set; } = string.Empty; public string DummyType { get; set; } = string.Empty;
+      #region Part A : Props ( UI Texts & Radio Bools )
+      public string DummyId { get; set; } public string DummyAddress { get; set; }
+      public string DummyZipCode { get; set; } public string DummyCity { get; set; } public string DummyCountry { get; set; }
+      public string DummyArea_InSqm { get; set; } public string DummyPrice { get; set; }
+      public double DummyRate { get; set; } public double DummyTaxedPrice { get; set; } public int DummyPricePerSqm { get; set; }
+      public string DummyImagePath { get; set; }
+      public string DummyCategory { get; set; } = string.Empty; public string DummyType { get; set; }
       #endregion
 
       #region Part B : Commands

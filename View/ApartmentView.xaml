@@ -8,7 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="white">
-
+    <UserControl.DataContext>
+        <local:ApartmentViewModel/>
+    </UserControl.DataContext>
     
     
     <Grid>
@@ -29,7 +31,7 @@
                 CanUserDeleteRows="False"
                 AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding DummyId}" Width="2*"/>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="2*"/>
                     <DataGridTextColumn Header="Street name" Binding="{Binding StreetName}" Width="4*"/>
                     <DataGridTextColumn Header="Zip code" Binding="{Binding ZipCode}" Width="4*"/>
                     <DataGridTextColumn Header="City" Binding="{Binding City}" Width="4*"/>
@@ -46,7 +48,7 @@
 
             <StackPanel Grid.Column="1">
                 <Label Content="Street name" />
-                <TextBox x:Name="tb_StreetName" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueStreetName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_StreetName" Margin="5, 0, 5, 15" Text="{Binding DummyId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Zip code" />
                 <TextBox x:Name="tb_ZipCode" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="City" />

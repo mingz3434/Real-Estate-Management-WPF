@@ -11,6 +11,8 @@
         Title="Modern Real Estates by Emelie Hansson" WindowStartupLocation="CenterScreen" Height="650" Width="1400"
         Loaded="Home_Checked">
 
+
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240"/>
