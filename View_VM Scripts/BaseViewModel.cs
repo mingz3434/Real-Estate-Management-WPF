@@ -10,6 +10,9 @@ public class BaseViewModel : INotifyPropertyChanged
 
       DCS_AddBtnClick = new RelayCommand(DCS_AddBtnClick_Do);
       DCS_EditBtnClick = new RelayCommand(DCS_EditBtnClick_Do);
+      DCS_DeleteBtnClick = new RelayCommand(DCS_DeleteBtnClick_Do);
+      DCS_SaveBtnClick = new RelayCommand(DCS_SaveBtnClick_Do);
+      DCS_ClearBtnClick = new RelayCommand(DCS_ClearBtnClick_Do);
 
    }
    #region Part A : Props ( UI Texts & Radio Bools )

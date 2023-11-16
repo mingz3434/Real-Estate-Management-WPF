@@ -4,14 +4,17 @@ using System.Collections.ObjectModel;
 using Modern_Real_Estate.Model;
 using Modern_Real_Estate.Model.EstateTypes;
 using System;
+using System.Linq;
 
 namespace Modern_Real_Estate.View{
    public class ApartmentViewModel : BaseViewModel{
       public ApartmentViewModel() : base(){  }
 
       public override void DCS_AddBtnClick_Do(object parameter){
+         int maxId = DummyEntries.Count == 0 ? -1 : DummyEntries.Max(_ => _.Id);
+
          DummyEntries.Add(new Apartment(
-            id: DummyEntries.Count,
+            id: maxId + 1,
             streetName: DummyStreetName,
             zipCode: DummyZipCode.ToInt(),
             city: DummyCity,
