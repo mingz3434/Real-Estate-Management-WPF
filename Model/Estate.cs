@@ -26,18 +26,18 @@ namespace Modern_Real_Estate.Model{
    public class Estate{
       public int Id { get; set; } public string StreetName { get; set; } public int ZipCode { get; set; }
       public string City { get; set; } public string Country { get; set; }
-      public double Area_InSqm { get; set; } public double Price { get; set; } 
+      public double Area { get; set; } public double Price { get; set; } 
       public double Rate { get; set; } public double TaxedPrice { get; set; } public int PricePerSqm { get; set; }
       public string ImagePath { get; set; }
       public string Category { get; set; } public string Type { get; set; }
 
       public Estate(int id, string streetName, int zipCode, string city, string country, double area, double price, double rate, string imagePath){
          this.Id = id; this.StreetName = streetName; this.ZipCode = zipCode;
-         this.City = city; this.Country = country; this.Area_InSqm = area;
+         this.City = city; this.Country = country; this.Area = area;
          this.Price = price; this.ImagePath = imagePath;
 
          this.TaxedPrice = this.CalculateTaxedPrice(price, this.Rate);
-         this.PricePerSqm = (int)Math.Round(this.Price / this.Area_InSqm);
+         this.PricePerSqm = (int)Math.Round(this.Price / this.Area);
 
          if(this is Residential) { this.Category = "Residential"; }
          else if(this is Commercial) { this.Category = "Commercial"; }
@@ -72,7 +72,7 @@ namespace Modern_Real_Estate.Model{
 
       public override string ToString()
       {
-         return "id: " + Id + " streetName: " + StreetName + " zipCode: " + ZipCode + " city: " + City + " country: " + Country + " area: " + Area_InSqm + " price: " + Price + " imagepath: " + ImagePath;
+         return "id: " + Id + " streetName: " + StreetName + " zipCode: " + ZipCode + " city: " + City + " country: " + Country + " area: " + Area + " price: " + Price + " imagepath: " + ImagePath;
       }
 
 

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Modern_Real_Estate.Model;
+using System.Collections.ObjectModel;
 public static class SM{
 
    //Home,Main,Apartment,Hospital,School,Shop,Townhouse,University,Villa,Warehouose
    public static List<Estate> HomeList = null;
    public static List<Estate> MainList = null;
-   public static List<Estate> ApartmentList = null;
+   public static List<Estate> ApartmentList = null; public static ObservableCollection<Estate> ApartmentOList = null;
    public static List<Estate> HospitalList = null;
    public static List<Estate> SchoolList = null;
    public static List<Estate> ShopList = null;

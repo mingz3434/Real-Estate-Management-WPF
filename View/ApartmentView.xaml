@@ -25,8 +25,8 @@
             </Grid.ColumnDefinitions>
 
             <DataGrid x:Name="dataGrid1" 
-                ItemsSource="{Binding estateManager.MyList}"
-                SelectedItem="{Binding SelectedEstate}"
+                ItemsSource="{Binding DummyEntries}"
+                SelectedItem="{Binding SelectedDummyEstate}"
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False"
                 AutoGenerateColumns="False">
@@ -37,9 +37,10 @@
                     <DataGridTextColumn Header="City" Binding="{Binding City}" Width="4*"/>
                     <DataGridTextColumn Header="Country" Binding="{Binding Country}" Width="4*"/>
                     <DataGridTextColumn Header="Rooms" Binding="{Binding Rooms}" Width="4*"/>
-                    <DataGridTextColumn Header="Square metre" Binding="{Binding SqrM}" Width="4*"/>
+                    <DataGridTextColumn Header="Area(m^2)" Binding="{Binding Area}" Width="4*"/>
+                    <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="4*"/>
                     <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="4*"/>
-                    <DataGridTextColumn Header="Image" Binding="{Binding Image}" Width="4*"/>
+                    <DataGridTextColumn Header="Image" Binding="{Binding ImagePath}" Width="4*"/>
                     <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="4*"/>
                 </DataGrid.Columns>
             </DataGrid>
@@ -48,26 +49,26 @@
 
             <StackPanel Grid.Column="1">
                 <Label Content="Street name" />
-                <TextBox x:Name="tb_StreetName" Margin="5, 0, 5, 15" Text="{Binding DummyId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_StreetName" Margin="5, 0, 5, 15" Text="{Binding DummyStreetName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Zip code" />
-                <TextBox x:Name="tb_ZipCode" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox x:Name="tb_ZipCode" Margin="5, 0, 5, 15" Text="{Binding DummyZipCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="City" />
-                <TextBox x:Name="tb_City" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueCity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_City" Margin="5, 0, 5, 15" Text="{Binding DummyCity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Country" />
                 <ComboBox x:Name="cb_Country"
                         ItemsSource="{Binding Countries}"
                         SelectedItem="{Binding selectedCountry}"
-                        Text="{Binding TextBoxValueCountry, Mode=TwoWay}" />
+                        Text="{Binding DummyCountry, Mode=TwoWay}" />
                 <Label Content="Rooms" />
-                <TextBox x:Name="tb_Rooms" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueRooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_Rooms" Margin="5, 0, 5, 15" Text="{Binding DummyRooms, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Area (in SqM)" />
-                <TextBox x:Name="tb_Area" Margin="5, 0, 5, 15" Text="{Binding TextBoxValueSqrM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_Area" Margin="5, 0, 5, 15" Text="{Binding DummyArea, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="Price" />
-                <TextBox x:Name="tb_Price" Margin="5, 0, 5, 15" Text="{Binding TextBoxValuePrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox x:Name="tb_Price" Margin="5, 0, 5, 15" Text="{Binding DummyPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Content="Delete"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding DeleteCommand}" />
                     <Button Content="Save"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding SaveCommand}" />
-                    <Button Content="Add"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding DCS_AddBtnClick}"  />
+                    <Button Content="Add"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding DCS_AddBtnClick}" Click="AddBtn_Click" />
                     <Button Content="Clear"  Width="65" Height="30" Margin="0, 0, 5, 0" Command="{Binding ClearCommand}" />
 
                 </StackPanel>
