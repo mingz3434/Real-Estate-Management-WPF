@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Xaml Design\" />
     <Folder Include="_Widgets\" />
   </ItemGroup>
 

@@ -14,7 +14,7 @@ namespace Modern_Real_Estate.Widgets{
 
 
       public static void BindSM(BaseViewModel bvm){
-         if(bvm is ApartmentViewModel){ SM.ApartmentOList = ((ApartmentViewModel)bvm).DummyEntries; }
+         
       }
 
       public static void ViewEntries(DataGrid dataGrid, UserControl userControl){

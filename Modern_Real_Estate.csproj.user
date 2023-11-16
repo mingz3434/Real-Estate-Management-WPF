@@ -10,32 +10,5 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ApartmentView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\HomeView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\HospitalView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\SchoolView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\ShopView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\TownhouseView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\UniversityView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\VillaView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\WarehouseView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>
